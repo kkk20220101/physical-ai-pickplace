@@ -1,0 +1,108 @@
+{
+  "episodes": 20,
+  "perception": "model",
+  "results": {
+    "順A Milk→Can→Bread（固定ルールの順）": {
+      "n_episodes": 20,
+      "episode_success_fraction": "6/20",
+      "episode_success_rate": 0.3,
+      "step_level": {
+        "n_steps": 60,
+        "n_success": 41,
+        "step_success_rate": 0.6833,
+        "step_success_fraction": "41/60",
+        "failure_modes": {
+          "F-3": {
+            "name": "未検出",
+            "count": 7
+          },
+          "F-5": {
+            "name": "把持失敗",
+            "count": 10
+          },
+          "F-7": {
+            "name": "配置失敗",
+            "count": 2
+          }
+        },
+        "cycle_time_sec_mean": 2.47,
+        "ledger_check": "41 + 19 = 60 ✔"
+      },
+      "identification_accuracy_fraction": "53/60",
+      "identification_accuracy": 0.8833,
+      "plan": [
+        "Milk→左の箱",
+        "Can→左の箱",
+        "Bread→右の箱"
+      ]
+    },
+    "順B Can→Milk→Bread（言語モデルの順）": {
+      "n_episodes": 20,
+      "episode_success_fraction": "2/20",
+      "episode_success_rate": 0.1,
+      "step_level": {
+        "n_steps": 60,
+        "n_success": 29,
+        "step_success_rate": 0.4833,
+        "step_success_fraction": "29/60",
+        "failure_modes": {
+          "F-3": {
+            "name": "未検出",
+            "count": 10
+          },
+          "F-5": {
+            "name": "把持失敗",
+            "count": 19
+          },
+          "F-7": {
+            "name": "配置失敗",
+            "count": 2
+          }
+        },
+        "cycle_time_sec_mean": 2.04,
+        "ledger_check": "29 + 31 = 60 ✔"
+      },
+      "identification_accuracy_fraction": "49/60",
+      "identification_accuracy": 0.8167,
+      "plan": [
+        "Can→左の箱",
+        "Milk→左の箱",
+        "Bread→右の箱"
+      ]
+    },
+    "順C Bread→Milk→Can（先に別の箱へ）": {
+      "n_episodes": 20,
+      "episode_success_fraction": "4/20",
+      "episode_success_rate": 0.2,
+      "step_level": {
+        "n_steps": 60,
+        "n_success": 34,
+        "step_success_rate": 0.5667,
+        "step_success_fraction": "34/60",
+        "failure_modes": {
+          "F-3": {
+            "name": "未検出",
+            "count": 7
+          },
+          "F-5": {
+            "name": "把持失敗",
+            "count": 14
+          },
+          "F-7": {
+            "name": "配置失敗",
+            "count": 5
+          }
+        },
+        "cycle_time_sec_mean": 2.31,
+        "ledger_check": "34 + 26 = 60 ✔"
+      },
+      "identification_accuracy_fraction": "53/60",
+      "identification_accuracy": 0.8833,
+      "plan": [
+        "Bread→右の箱",
+        "Milk→左の箱",
+        "Can→左の箱"
+      ]
+    }
+  }
+}

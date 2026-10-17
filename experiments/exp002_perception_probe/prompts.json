@@ -1,0 +1,84 @@
+{
+  "a carton of milk": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a white carton": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a white box": {
+    "当たり": {
+      "Bread": 1,
+      "Milk": 1,
+      "（外れ）": 1
+    },
+    "平均スコア": 0.166
+  },
+  "a tall white object": {
+    "当たり": {
+      "（外れ）": 3
+    },
+    "平均スコア": 0.182
+  },
+  "a loaf of bread": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a brown cube": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a small brown box": {
+    "当たり": {
+      "Bread": 2,
+      "（外れ）": 1
+    },
+    "平均スコア": 0.111
+  },
+  "a brown object": {
+    "当たり": {
+      "Bread": 2,
+      "（外れ）": 1
+    },
+    "平均スコア": 0.13
+  },
+  "a cereal box": {
+    "当たり": {
+      "Cereal": 2
+    },
+    "平均スコア": 0.326
+  },
+  "a tall red box": {
+    "当たり": {
+      "Can": 3
+    },
+    "平均スコア": 0.157
+  },
+  "a dark red box": {
+    "当たり": {
+      "Cereal": 2
+    },
+    "平均スコア": 0.145
+  },
+  "a red carton": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a soda can": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a red can": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a red cylinder": {
+    "当たり": {},
+    "平均スコア": null
+  },
+  "a red bottle": {
+    "当たり": {},
+    "平均スコア": null
+  }
+}

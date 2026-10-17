@@ -1,0 +1,32 @@
+# 実行結果・中間生成物（サイズが大きいため git に含めない）
+outputs/
+data/
+experiments/**/out/
+*.mp4
+*.avi
+*.png
+*.jpg
+*.otf
+!docs/**/*.png
+
+# 提出物（完成品のみ別途管理）
+submission/*.zip
+submission/*.mp4
+submission/*.pdf
+
+# モデル重み
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+*.egg-info/
+
+# エディタ・OS
+.vscode/
+.DS_Store

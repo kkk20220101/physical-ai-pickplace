@@ -1,0 +1,401 @@
+{
+  "model": "google/owlv2-base-patch16-ensemble",
+  "seeds": 5,
+  "image_size": 512,
+  "threshold": 0.05,
+  "detection": {
+    "Milk": {
+      "fraction": "5/5",
+      "median_error_m": 0.0352,
+      "median_error_xy_m": 0.0224
+    },
+    "Bread": {
+      "fraction": "5/5",
+      "median_error_m": 0.029,
+      "median_error_xy_m": 0.0221
+    },
+    "Cereal": {
+      "fraction": "3/5",
+      "median_error_m": 0.0264,
+      "median_error_xy_m": 0.0188
+    },
+    "Can": {
+      "fraction": "5/5",
+      "median_error_m": 0.0366,
+      "median_error_xy_m": 0.0244
+    }
+  },
+  "decisive_tests": {
+    "T-1_画像ゼロ化": {
+      "通常の検出数": 3,
+      "ゼロ画像の検出数": 0,
+      "判定": "合格"
+    },
+    "T-2_語の入れ替え": {
+      "説明": "Milk に『缶』、Can に『牛乳』の語を与えた",
+      "元の画素": {
+        "Milk": [
+          158,
+          233
+        ],
+        "Can": [
+          135,
+          229
+        ]
+      },
+      "入替後の画素": {
+        "Can": [
+          141,
+          201
+        ],
+        "Milk": [
+          124,
+          208
+        ]
+      },
+      "判定": "合格"
+    },
+    "T-3_出力の固定確認": {
+      "異なるシード間でスコアが変動するか": true
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "objects": {
+        "Milk": {
+          "detected": true,
+          "score": 0.08,
+          "query": "a milk box",
+          "error_m": 0.0399,
+          "error_xy_m": 0.0203,
+          "est": [
+            0.229,
+            -0.28,
+            0.919
+          ],
+          "truth": [
+            0.211,
+            -0.29,
+            0.885
+          ]
+        },
+        "Bread": {
+          "detected": true,
+          "score": 0.067,
+          "query": "a loaf of bread",
+          "error_m": 0.0329,
+          "error_xy_m": 0.0243,
+          "est": [
+            0.13,
+            -0.222,
+            0.867
+          ],
+          "truth": [
+            0.107,
+            -0.228,
+            0.845
+          ]
+        },
+        "Cereal": {
+          "detected": false
+        },
+        "Can": {
+          "detected": true,
+          "score": 0.473,
+          "query": "a soda can",
+          "error_m": 0.0366,
+          "error_xy_m": 0.0249,
+          "est": [
+            0.204,
+            -0.152,
+            0.887
+          ],
+          "truth": [
+            0.18,
+            -0.155,
+            0.86
+          ]
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "objects": {
+        "Milk": {
+          "detected": true,
+          "score": 0.202,
+          "query": "a milk box",
+          "error_m": 0.029,
+          "error_xy_m": 0.019,
+          "est": [
+            0.048,
+            -0.119,
+            0.907
+          ],
+          "truth": [
+            0.029,
+            -0.121,
+            0.885
+          ]
+        },
+        "Bread": {
+          "detected": true,
+          "score": 0.058,
+          "query": "a piece of bread",
+          "error_m": 0.0225,
+          "error_xy_m": 0.0211,
+          "est": [
+            0.159,
+            -0.271,
+            0.837
+          ],
+          "truth": [
+            0.139,
+            -0.277,
+            0.845
+          ]
+        },
+        "Cereal": {
+          "detected": true,
+          "score": 0.547,
+          "query": "a cereal box",
+          "error_m": 0.0207,
+          "error_xy_m": 0.0151,
+          "est": [
+            0.039,
+            -0.34,
+            0.914
+          ],
+          "truth": [
+            0.024,
+            -0.344,
+            0.9
+          ]
+        },
+        "Can": {
+          "detected": true,
+          "score": 0.743,
+          "query": "a soda can",
+          "error_m": 0.0396,
+          "error_xy_m": 0.0242,
+          "est": [
+            0.235,
+            -0.304,
+            0.891
+          ],
+          "truth": [
+            0.212,
+            -0.313,
+            0.86
+          ]
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "objects": {
+        "Milk": {
+          "detected": true,
+          "score": 0.368,
+          "query": "a milk box",
+          "error_m": 0.0346,
+          "error_xy_m": 0.0224,
+          "est": [
+            0.073,
+            -0.321,
+            0.911
+          ],
+          "truth": [
+            0.052,
+            -0.329,
+            0.885
+          ]
+        },
+        "Bread": {
+          "detected": true,
+          "score": 0.058,
+          "query": "a piece of bread",
+          "error_m": 0.0216,
+          "error_xy_m": 0.0029,
+          "est": [
+            0.104,
+            -0.369,
+            0.866
+          ],
+          "truth": [
+            0.107,
+            -0.371,
+            0.845
+          ]
+        },
+        "Cereal": {
+          "detected": true,
+          "score": 0.457,
+          "query": "a box of cereal",
+          "error_m": 0.0264,
+          "error_xy_m": 0.0188,
+          "est": [
+            0.053,
+            -0.161,
+            0.919
+          ],
+          "truth": [
+            0.034,
+            -0.162,
+            0.9
+          ]
+        },
+        "Can": {
+          "detected": true,
+          "score": 0.721,
+          "query": "a can of soda",
+          "error_m": 0.0348,
+          "error_xy_m": 0.0244,
+          "est": [
+            0.123,
+            -0.129,
+            0.885
+          ],
+          "truth": [
+            0.099,
+            -0.132,
+            0.86
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "objects": {
+        "Milk": {
+          "detected": true,
+          "score": 0.236,
+          "query": "a milk box",
+          "error_m": 0.0352,
+          "error_xy_m": 0.0232,
+          "est": [
+            0.009,
+            -0.257,
+            0.911
+          ],
+          "truth": [
+            -0.013,
+            -0.265,
+            0.885
+          ]
+        },
+        "Bread": {
+          "detected": true,
+          "score": 0.108,
+          "query": "a loaf of bread",
+          "error_m": 0.0301,
+          "error_xy_m": 0.0229,
+          "est": [
+            0.072,
+            -0.188,
+            0.865
+          ],
+          "truth": [
+            0.049,
+            -0.192,
+            0.845
+          ]
+        },
+        "Cereal": {
+          "detected": false
+        },
+        "Can": {
+          "detected": true,
+          "score": 0.649,
+          "query": "a can of soda",
+          "error_m": 0.0351,
+          "error_xy_m": 0.0244,
+          "est": [
+            0.191,
+            -0.309,
+            0.885
+          ],
+          "truth": [
+            0.167,
+            -0.316,
+            0.86
+          ]
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "objects": {
+        "Milk": {
+          "detected": true,
+          "score": 0.246,
+          "query": "a milk box",
+          "error_m": 0.0394,
+          "error_xy_m": 0.0228,
+          "est": [
+            0.21,
+            -0.084,
+            0.917
+          ],
+          "truth": [
+            0.187,
+            -0.086,
+            0.885
+          ]
+        },
+        "Bread": {
+          "detected": true,
+          "score": 0.084,
+          "query": "a loaf of bread",
+          "error_m": 0.029,
+          "error_xy_m": 0.0221,
+          "est": [
+            0.143,
+            -0.404,
+            0.864
+          ],
+          "truth": [
+            0.122,
+            -0.412,
+            0.845
+          ]
+        },
+        "Cereal": {
+          "detected": true,
+          "score": 0.147,
+          "query": "a cereal box",
+          "error_m": 0.0469,
+          "error_xy_m": 0.0352,
+          "est": [
+            0.039,
+            -0.106,
+            0.931
+          ],
+          "truth": [
+            0.004,
+            -0.108,
+            0.9
+          ]
+        },
+        "Can": {
+          "detected": true,
+          "score": 0.52,
+          "query": "a can of soda",
+          "error_m": 0.039,
+          "error_xy_m": 0.0243,
+          "est": [
+            0.232,
+            -0.148,
+            0.891
+          ],
+          "truth": [
+            0.208,
+            -0.153,
+            0.86
+          ]
+        }
+      }
+    }
+  ]
+}

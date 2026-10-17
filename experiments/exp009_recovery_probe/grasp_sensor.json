@@ -1,0 +1,292 @@
+{
+  "rows": [
+    {
+      "episode": 0,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0372,
+      "lift_m": 0.1822,
+      "grasped_truth": true
+    },
+    {
+      "episode": 0,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2265,
+      "grasped_truth": true
+    },
+    {
+      "episode": 0,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0374,
+      "lift_m": 0.2356,
+      "grasped_truth": true
+    },
+    {
+      "episode": 1,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0396,
+      "lift_m": 0.1889,
+      "grasped_truth": true
+    },
+    {
+      "episode": 1,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2295,
+      "grasped_truth": true
+    },
+    {
+      "episode": 1,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0374,
+      "lift_m": 0.2363,
+      "grasped_truth": true
+    },
+    {
+      "episode": 2,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0396,
+      "lift_m": 0.188,
+      "grasped_truth": true
+    },
+    {
+      "episode": 2,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.048,
+      "lift_m": 0.2221,
+      "grasped_truth": true
+    },
+    {
+      "episode": 2,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0374,
+      "lift_m": 0.238,
+      "grasped_truth": true
+    },
+    {
+      "episode": 3,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0393,
+      "lift_m": 0.185,
+      "grasped_truth": true
+    },
+    {
+      "episode": 3,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2287,
+      "grasped_truth": true
+    },
+    {
+      "episode": 3,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0374,
+      "lift_m": 0.2368,
+      "grasped_truth": true
+    },
+    {
+      "episode": 4,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0379,
+      "lift_m": 0.1832,
+      "grasped_truth": true
+    },
+    {
+      "episode": 4,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2278,
+      "grasped_truth": true
+    },
+    {
+      "episode": 4,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0374,
+      "lift_m": 0.239,
+      "grasped_truth": true
+    },
+    {
+      "episode": 5,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0396,
+      "lift_m": 0.1905,
+      "grasped_truth": true
+    },
+    {
+      "episode": 5,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2299,
+      "grasped_truth": true
+    },
+    {
+      "episode": 5,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0451,
+      "lift_m": 0.2369,
+      "grasped_truth": true
+    },
+    {
+      "episode": 6,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0396,
+      "lift_m": 0.1886,
+      "grasped_truth": true
+    },
+    {
+      "episode": 6,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2284,
+      "grasped_truth": true
+    },
+    {
+      "episode": 6,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.001,
+      "lift_m": -0.0027,
+      "grasped_truth": false
+    },
+    {
+      "episode": 7,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0385,
+      "lift_m": 0.1831,
+      "grasped_truth": true
+    },
+    {
+      "episode": 7,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2302,
+      "grasped_truth": true
+    },
+    {
+      "episode": 7,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.001,
+      "lift_m": -0.0028,
+      "grasped_truth": false
+    },
+    {
+      "episode": 8,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0396,
+      "lift_m": 0.1898,
+      "grasped_truth": true
+    },
+    {
+      "episode": 8,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.229,
+      "grasped_truth": true
+    },
+    {
+      "episode": 8,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0374,
+      "lift_m": 0.2156,
+      "grasped_truth": true
+    },
+    {
+      "episode": 9,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0387,
+      "lift_m": 0.1843,
+      "grasped_truth": true
+    },
+    {
+      "episode": 9,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.001,
+      "lift_m": 0.0001,
+      "grasped_truth": false
+    },
+    {
+      "episode": 9,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0374,
+      "lift_m": 0.2375,
+      "grasped_truth": true
+    },
+    {
+      "episode": 10,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0389,
+      "lift_m": 0.186,
+      "grasped_truth": true
+    },
+    {
+      "episode": 10,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.001,
+      "lift_m": 0.0001,
+      "grasped_truth": false
+    },
+    {
+      "episode": 10,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.0015,
+      "lift_m": -0.0028,
+      "grasped_truth": false
+    },
+    {
+      "episode": 11,
+      "target": "Milk",
+      "gap_open": 0.0417,
+      "gap_after": 0.0396,
+      "lift_m": 0.1852,
+      "grasped_truth": true
+    },
+    {
+      "episode": 11,
+      "target": "Can",
+      "gap_open": 0.0417,
+      "gap_after": 0.0497,
+      "lift_m": 0.2285,
+      "grasped_truth": true
+    },
+    {
+      "episode": 11,
+      "target": "Bread",
+      "gap_open": 0.0417,
+      "gap_after": 0.001,
+      "lift_m": -0.0023,
+      "grasped_truth": false
+    }
+  ]
+}

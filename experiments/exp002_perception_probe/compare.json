@@ -1,0 +1,157 @@
+{
+  "seeds": 5,
+  "queries": {
+    "Milk": [
+      "a carton of milk",
+      "a milk box"
+    ],
+    "Bread": [
+      "a loaf of bread",
+      "a piece of bread"
+    ],
+    "Cereal": [
+      "a cereal box",
+      "a box of cereal"
+    ],
+    "Can": [
+      "a soda can",
+      "a can of soda"
+    ]
+  },
+  "crop": [
+    0.02,
+    0.25,
+    0.56,
+    0.72
+  ],
+  "results": [
+    {
+      "condition": "P1 OWL-ViT / 全体",
+      "identification_fraction": "5/20",
+      "identification_rate": 0.25,
+      "per_object": {
+        "Milk": {
+          "正解": 0,
+          "取り違え": 3,
+          "未検出": 2,
+          "画素誤差中央値": null
+        },
+        "Bread": {
+          "正解": 0,
+          "取り違え": 0,
+          "未検出": 5,
+          "画素誤差中央値": null
+        },
+        "Cereal": {
+          "正解": 3,
+          "取り違え": 0,
+          "未検出": 2,
+          "画素誤差中央値": 1.9
+        },
+        "Can": {
+          "正解": 2,
+          "取り違え": 0,
+          "未検出": 3,
+          "画素誤差中央値": 2.0
+        }
+      },
+      "ledger_check": "5 + 3 + 12 = 20 ✔"
+    },
+    {
+      "condition": "P2 OWL-ViT / 卓上切出し",
+      "identification_fraction": "8/20",
+      "identification_rate": 0.4,
+      "per_object": {
+        "Milk": {
+          "正解": 0,
+          "取り違え": 5,
+          "未検出": 0,
+          "画素誤差中央値": null
+        },
+        "Bread": {
+          "正解": 1,
+          "取り違え": 0,
+          "未検出": 4,
+          "画素誤差中央値": 0.5
+        },
+        "Cereal": {
+          "正解": 4,
+          "取り違え": 1,
+          "未検出": 0,
+          "画素誤差中央値": 2.1
+        },
+        "Can": {
+          "正解": 3,
+          "取り違え": 0,
+          "未検出": 2,
+          "画素誤差中央値": 1.7
+        }
+      },
+      "ledger_check": "8 + 6 + 6 = 20 ✔"
+    },
+    {
+      "condition": "P3 OWLv2 / 全体",
+      "identification_fraction": "11/20",
+      "identification_rate": 0.55,
+      "per_object": {
+        "Milk": {
+          "正解": 4,
+          "取り違え": 1,
+          "未検出": 0,
+          "画素誤差中央値": 2.4
+        },
+        "Bread": {
+          "正解": 0,
+          "取り違え": 0,
+          "未検出": 5,
+          "画素誤差中央値": null
+        },
+        "Cereal": {
+          "正解": 2,
+          "取り違え": 1,
+          "未検出": 2,
+          "画素誤差中央値": 1.5
+        },
+        "Can": {
+          "正解": 5,
+          "取り違え": 0,
+          "未検出": 0,
+          "画素誤差中央値": 0.7
+        }
+      },
+      "ledger_check": "11 + 2 + 7 = 20 ✔"
+    },
+    {
+      "condition": "P4 OWLv2 / 卓上切出し",
+      "identification_fraction": "18/20",
+      "identification_rate": 0.9,
+      "per_object": {
+        "Milk": {
+          "正解": 5,
+          "取り違え": 0,
+          "未検出": 0,
+          "画素誤差中央値": 2.8
+        },
+        "Bread": {
+          "正解": 5,
+          "取り違え": 0,
+          "未検出": 0,
+          "画素誤差中央値": 0.8
+        },
+        "Cereal": {
+          "正解": 3,
+          "取り違え": 0,
+          "未検出": 2,
+          "画素誤差中央値": 1.1
+        },
+        "Can": {
+          "正解": 5,
+          "取り違え": 0,
+          "未検出": 0,
+          "画素誤差中央値": 0.9
+        }
+      },
+      "ledger_check": "18 + 0 + 2 = 20 ✔"
+    }
+  ]
+}

@@ -1,0 +1,1507 @@
+{
+  "episodes": 20,
+  "seed": 0,
+  "results": {
+    "C5  全層AI+自己監視と再試行": {
+      "n_episodes": 20,
+      "episode_success_fraction": "10/20",
+      "episode_success_rate": 0.5,
+      "step_level": {
+        "n_steps": 60,
+        "n_success": 47,
+        "step_success_rate": 0.7833,
+        "step_success_fraction": "47/60",
+        "failure_modes": {
+          "F-3": {
+            "name": "未検出",
+            "count": 1
+          },
+          "F-5": {
+            "name": "把持失敗",
+            "count": 9
+          },
+          "F-6": {
+            "name": "搬送失敗",
+            "count": 1
+          },
+          "F-7": {
+            "name": "配置失敗",
+            "count": 2
+          }
+        },
+        "cycle_time_sec_mean": 3.9,
+        "ledger_check": "47 + 13 = 60 ✔"
+      },
+      "identification_accuracy_fraction": "59/60",
+      "identification_accuracy": 0.9833,
+      "recovery": {
+        "n_steps": 60,
+        "n_redetect": 10,
+        "n_regrasp": 15,
+        "n_retried": 20,
+        "n_rescued": 9,
+        "rescued_fraction": "9/20",
+        "n_plausibility_rejections": 0,
+        "max_grasp_attempts": 3
+      },
+      "condition": "C5  全層AI+自己監視と再試行",
+      "settings": {
+        "planner": "llm",
+        "perception": "model",
+        "position_mode": "ray_plane",
+        "yaw_source": "model",
+        "recovery": true
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.08,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 6.87,
+              "lift_height_m": 0.1817,
+              "position_error_m": 0.0196,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.513,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.98,
+              "lift_height_m": 0.2179,
+              "position_error_m": 0.0139,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.009,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.28,
+              "lift_height_m": 0.2321,
+              "position_error_m": 0.0356,
+              "detect_level": 2,
+              "grasp_attempts": 1,
+              "recovery_events": [
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a bread loaf on a table",
+                  "score": 0.009
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 734
+        },
+        {
+          "episode": 1,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.202,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 4.51,
+              "lift_height_m": -0.0471,
+              "position_error_m": 0.1377,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                }
+              ]
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.741,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.79,
+              "lift_height_m": 0.2201,
+              "position_error_m": 0.0186,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.039,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.05,
+              "lift_height_m": 0.2394,
+              "position_error_m": 0.0196,
+              "detect_level": 2,
+              "grasp_attempts": 1,
+              "recovery_events": [
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a piece of bread",
+                  "score": 0.039
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 845
+        },
+        {
+          "episode": 2,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.368,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.61,
+              "lift_height_m": 0.2074,
+              "position_error_m": 0.0151,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.709,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.35,
+              "lift_height_m": 0.2192,
+              "position_error_m": 0.0149,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.055,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 8.0,
+              "lift_height_m": 0.2265,
+              "position_error_m": 0.0264,
+              "detect_level": 2,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a loaf",
+                  "score": 0.048
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a piece of bread",
+                  "score": 0.043
+                },
+                {
+                  "kind": "regrasp_success",
+                  "attempt": 3
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 1071
+        },
+        {
+          "episode": 3,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.236,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.89,
+              "lift_height_m": 0.1804,
+              "position_error_m": 0.0162,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.676,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.47,
+              "lift_height_m": 0.2197,
+              "position_error_m": 0.0151,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.012,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.07,
+              "lift_height_m": 0.2409,
+              "position_error_m": 0.0193,
+              "detect_level": 2,
+              "grasp_attempts": 1,
+              "recovery_events": [
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a piece of bread",
+                  "score": 0.012
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 727
+        },
+        {
+          "episode": 4,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.246,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.78,
+              "lift_height_m": 0.1788,
+              "position_error_m": 0.0136,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.521,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.19,
+              "lift_height_m": 0.2192,
+              "position_error_m": 0.0163,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.072,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.74,
+              "lift_height_m": 0.2253,
+              "position_error_m": 0.0059,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 801
+        },
+        {
+          "episode": 5,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.197,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.05,
+              "lift_height_m": 0.2089,
+              "position_error_m": 0.0124,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.674,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 4.4,
+              "lift_height_m": 0.2204,
+              "position_error_m": 0.0161,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.0,
+              "identified_correctly": false,
+              "success": false,
+              "failure_mode": "F-3",
+              "elapsed_sec": 0.45,
+              "lift_height_m": 0.0,
+              "detect_level": 2,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 500
+        },
+        {
+          "episode": 6,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.38,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.01,
+              "lift_height_m": 0.2072,
+              "position_error_m": 0.014,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.764,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.73,
+              "lift_height_m": 0.2183,
+              "position_error_m": 0.0147,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.071,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.58,
+              "lift_height_m": 0.2393,
+              "position_error_m": 0.0092,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 656
+        },
+        {
+          "episode": 7,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.213,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 4.87,
+              "lift_height_m": -0.0471,
+              "position_error_m": 0.0962,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                }
+              ]
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.625,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.56,
+              "lift_height_m": 0.2204,
+              "position_error_m": 0.0159,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.076,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.42,
+              "lift_height_m": 0.236,
+              "position_error_m": 0.0064,
+              "detect_level": 1,
+              "grasp_attempts": 1,
+              "recovery_events": [
+                {
+                  "kind": "redetect",
+                  "level": 1,
+                  "query": "a bread loaf on a table",
+                  "score": 0.076
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 909
+        },
+        {
+          "episode": 8,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.271,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.1,
+              "lift_height_m": 0.2058,
+              "position_error_m": 0.0134,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.707,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.64,
+              "lift_height_m": 0.2191,
+              "position_error_m": 0.0154,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.126,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.52,
+              "lift_height_m": 0.2346,
+              "position_error_m": 0.0067,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 735
+        },
+        {
+          "episode": 9,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.333,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 5.86,
+              "lift_height_m": -0.0477,
+              "position_error_m": 0.1519,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                }
+              ]
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.735,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 6.64,
+              "lift_height_m": -0.0067,
+              "position_error_m": 0.0384,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.0013,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                }
+              ]
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.141,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 8.38,
+              "lift_height_m": 0.0,
+              "position_error_m": 0.0222,
+              "detect_level": 2,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 1,
+                  "query": "a loaf",
+                  "score": 0.137
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a piece of bread",
+                  "score": 0.026
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 1612
+        },
+        {
+          "episode": 10,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.28,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.85,
+              "lift_height_m": 0.1824,
+              "position_error_m": 0.0169,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.756,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 6.14,
+              "lift_height_m": 0.0029,
+              "position_error_m": 0.0386,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.0012,
+                  "next_dz": 0.015
+                }
+              ]
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.11,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.73,
+              "lift_height_m": 0.2314,
+              "position_error_m": 0.0063,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 940
+        },
+        {
+          "episode": 11,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.258,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.78,
+              "lift_height_m": 0.1806,
+              "position_error_m": 0.0145,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.771,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.56,
+              "lift_height_m": 0.2174,
+              "position_error_m": 0.0148,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.031,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 9.99,
+              "lift_height_m": 0.0,
+              "position_error_m": 0.0457,
+              "detect_level": 2,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "bread",
+                  "score": 0.031
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a loaf",
+                  "score": 0.048
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "bread",
+                  "score": 0.032
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 1265
+        },
+        {
+          "episode": 12,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.27,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.48,
+              "lift_height_m": 0.1808,
+              "position_error_m": 0.018,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.782,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.51,
+              "lift_height_m": 0.2186,
+              "position_error_m": 0.0148,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.119,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.07,
+              "lift_height_m": 0.2441,
+              "position_error_m": 0.0064,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 705
+        },
+        {
+          "episode": 13,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.087,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 4.97,
+              "lift_height_m": -0.0471,
+              "position_error_m": 0.1391,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.001,
+                  "next_dz": 0.015
+                }
+              ]
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.568,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.67,
+              "lift_height_m": 0.2172,
+              "position_error_m": 0.0162,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.038,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 6.47,
+              "lift_height_m": 0.235,
+              "position_error_m": 0.0145,
+              "detect_level": 2,
+              "grasp_attempts": 2,
+              "recovery_events": [
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a loaf",
+                  "score": 0.038
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a loaf",
+                  "score": 0.025
+                },
+                {
+                  "kind": "regrasp_success",
+                  "attempt": 2
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 1108
+        },
+        {
+          "episode": 14,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.182,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 4.37,
+              "lift_height_m": 0.2126,
+              "position_error_m": 0.061,
+              "detect_level": 0,
+              "grasp_attempts": 2,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "regrasp_success",
+                  "attempt": 2
+                }
+              ]
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.762,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 5.72,
+              "lift_height_m": 0.219,
+              "position_error_m": 0.0162,
+              "detect_level": 0,
+              "grasp_attempts": 2,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "regrasp_success",
+                  "attempt": 2
+                }
+              ]
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.172,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.21,
+              "lift_height_m": 0.22,
+              "position_error_m": 0.0204,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 1076
+        },
+        {
+          "episode": 15,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.219,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-7",
+              "elapsed_sec": 2.49,
+              "lift_height_m": 0.1854,
+              "position_error_m": 0.0145,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.65,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.74,
+              "lift_height_m": 0.2207,
+              "position_error_m": 0.0246,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.097,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.28,
+              "lift_height_m": 0.2409,
+              "position_error_m": 0.0067,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 670
+        },
+        {
+          "episode": 16,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.324,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.0,
+              "lift_height_m": 0.2101,
+              "position_error_m": 0.0135,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.673,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.25,
+              "lift_height_m": 0.218,
+              "position_error_m": 0.0152,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.07,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.21,
+              "lift_height_m": 0.2405,
+              "position_error_m": 0.0068,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 585
+        },
+        {
+          "episode": 17,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.276,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-7",
+              "elapsed_sec": 2.72,
+              "lift_height_m": 0.1835,
+              "position_error_m": 0.017,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.701,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.42,
+              "lift_height_m": 0.2177,
+              "position_error_m": 0.0143,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.051,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-6",
+              "elapsed_sec": 11.76,
+              "lift_height_m": 0.215,
+              "position_error_m": 0.0829,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a piece of bread",
+                  "score": 0.047
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.0019,
+                  "next_dz": 0.015
+                },
+                {
+                  "kind": "regrasp_success",
+                  "attempt": 3
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 1466
+        },
+        {
+          "episode": 18,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": false,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.434,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.48,
+              "lift_height_m": 0.2063,
+              "position_error_m": 0.0132,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.239,
+              "identified_correctly": true,
+              "success": false,
+              "failure_mode": "F-5",
+              "elapsed_sec": 5.78,
+              "lift_height_m": 0.0,
+              "position_error_m": 0.0156,
+              "detect_level": 0,
+              "grasp_attempts": 3,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 2,
+                  "finger_gap_m": 0.0012,
+                  "next_dz": 0.015
+                }
+              ]
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.105,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 5.81,
+              "lift_height_m": 0.2431,
+              "position_error_m": 0.0243,
+              "detect_level": 2,
+              "grasp_attempts": 2,
+              "recovery_events": [
+                {
+                  "kind": "grasp_miss",
+                  "attempt": 1,
+                  "finger_gap_m": 0.001,
+                  "next_dz": -0.015
+                },
+                {
+                  "kind": "redetect",
+                  "level": 2,
+                  "query": "a loaf",
+                  "score": 0.048
+                },
+                {
+                  "kind": "regrasp_success",
+                  "attempt": 2
+                }
+              ]
+            }
+          ],
+          "n_env_steps": 1144
+        },
+        {
+          "episode": 19,
+          "instruction": "飲み物を左の箱へ、食べ物を右の箱へ",
+          "plan": [
+            "Milk→左の箱",
+            "Can→左の箱",
+            "Bread→右の箱"
+          ],
+          "success": true,
+          "steps": [
+            {
+              "target": "Milk",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.221,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.84,
+              "lift_height_m": 0.1816,
+              "position_error_m": 0.0237,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Can",
+              "destination": "左の箱",
+              "source": "model",
+              "score": 0.693,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 3.59,
+              "lift_height_m": 0.2175,
+              "position_error_m": 0.0151,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            },
+            {
+              "target": "Bread",
+              "destination": "右の箱",
+              "source": "model",
+              "score": 0.131,
+              "identified_correctly": true,
+              "success": true,
+              "failure_mode": null,
+              "elapsed_sec": 2.59,
+              "lift_height_m": 0.2426,
+              "position_error_m": 0.0072,
+              "detect_level": 0,
+              "grasp_attempts": 1,
+              "recovery_events": []
+            }
+          ],
+          "n_env_steps": 731
+        }
+      ]
+    }
+  }
+}

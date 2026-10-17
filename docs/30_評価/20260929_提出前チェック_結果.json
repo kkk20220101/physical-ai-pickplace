@@ -1,0 +1,95 @@
+{
+  "zip": "submission/提出_PAI最終課題_PLACEHOLDER.zip",
+  "rows": [
+    {
+      "no": 1,
+      "item": "ロボットがタスクを実行している様子が映っている",
+      "status": "人の目視",
+      "detail": "映像の内容は機械では判定しない"
+    },
+    {
+      "no": 2,
+      "item": "動画の長さが60〜300秒",
+      "status": "OK",
+      "detail": "191.2 秒"
+    },
+    {
+      "no": 3,
+      "item": "倍速の旨を明記",
+      "status": "人の目視",
+      "detail": "2倍速区間にバッジを焼き込んである。目で確認する"
+    },
+    {
+      "no": 4,
+      "item": "動画が MP4 で規定のファイル名",
+      "status": "OK",
+      "detail": "動画_PAI最終課題_PLACEHOLDER.mp4"
+    },
+    {
+      "no": 5,
+      "item": "レポートが PDF で規定のファイル名",
+      "status": "OK",
+      "detail": "説明資料_PAI最終課題_PLACEHOLDER.pdf"
+    },
+    {
+      "no": 6,
+      "item": "レポートに概要・目的・工夫した点がある",
+      "status": "OK",
+      "detail": "9ページ / 3節とも有"
+    },
+    {
+      "no": 7,
+      "item": "Zip が 200MB 以下",
+      "status": "OK",
+      "detail": "3.71 MB"
+    },
+    {
+      "no": 8,
+      "item": "AI を使用している",
+      "status": "人の目視",
+      "detail": "OWLv2 と Qwen2.5-1.5B を推論で使用。レポート §3・§4 に記載"
+    },
+    {
+      "no": 9,
+      "item": "GitHub にコード一式があり URL を出せる",
+      "status": "人の目視",
+      "detail": "中身は公開可（check_publish_safety.py）。push は U-08 待ち"
+    },
+    {
+      "no": 10,
+      "item": "公開できないデータを含んでいない",
+      "status": "OK",
+      "detail": "PDF 本文に禁止語なし"
+    },
+    {
+      "no": 11,
+      "item": "剽窃・丸写し・無関係ファイルを含まない",
+      "status": "人の目視",
+      "detail": "判断は人が行う"
+    },
+    {
+      "no": 12,
+      "item": "締切より前に提出した",
+      "status": "人の目視",
+      "detail": "提出操作は人が行う"
+    },
+    {
+      "no": 13,
+      "item": "ファイル名が omnicampus アカウント名になっている",
+      "status": "NG",
+      "detail": "PLACEHOLDER のまま（U-02 待ち）。--account を付けて再生成する"
+    },
+    {
+      "no": 14,
+      "item": "動画が先頭から再生できる（moov が前方）",
+      "status": "OK",
+      "detail": "ftyp → moov"
+    },
+    {
+      "no": 0,
+      "item": "Zip の中身がちょうど2ファイル",
+      "status": "OK",
+      "detail": "2件: ['動画_PAI最終課題_PLACEHOLDER.mp4', '説明資料_PAI最終課題_PLACEHOLDER.pdf']"
+    }
+  ]
+}

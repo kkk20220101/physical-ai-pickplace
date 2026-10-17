@@ -1,0 +1,31 @@
+# 実際に動いた版を記録する（設計書 §6 / DEC-53）。
+# 計測に使った環境: Python 3.12.13 / ffmpeg 7.1.1
+#
+# ffmpeg は pip では入らない。conda なら:  conda install -c conda-forge ffmpeg=7.1
+# torch は環境により CUDA 版と CPU 版で配布物が違う。計測機は 2.7.1+cu126 だった。
+#   GPU 版:  pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
+#   CPU 版:  pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+# どちらでも動く（`src/device.py` が実行時に判定する。DEC-52）。GPU が無いと推論は遅い。
+
+# --- シミュレータ ---
+robosuite==1.4.1
+mujoco==3.7.0
+gymnasium==1.3.0
+
+# --- 推論に使う学習済みモデル（学習はしない） ---
+torch==2.7.1
+transformers==5.5.4
+huggingface-hub==1.27.0
+
+# --- 画像・数値 ---
+numpy==2.2.6
+opencv-python==5.0.0.93
+Pillow==12.3.0
+
+# --- 図と提出物の生成 ---
+matplotlib==3.10.8
+PyMuPDF==1.28.2
+Markdown==3.7
+
+# --- 実験 exp007（PDF 変換経路の比較）でのみ使う ---
+fonttools==4.63.0
